@@ -1,0 +1,21 @@
+@use './fonts.scss';
+
+:root {
+    --fg-color: black;
+    --bg-color: white;
+
+    --primary-color: #3b4d54;
+    --secondary-color: #bdd3e0;
+
+    --font-family: Arial, Helvetica, sans-serif;
+    --font-family-special: 'Vollkorn', serif;
+
+
+
+}
+
+body {
+
+    font-family: var(--font-family);
+    font-size: 18px;
+}
