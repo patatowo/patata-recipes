@@ -1,28 +1,11 @@
 <script>
-import { CooklangRepository } from "cookhub";
+import { useRecipesStore } from '~/store/recipes'
 
 export default {
-    data() {
-        return {
-            recipes: []
-        }
-    },
-    methods: {
-        add() {
-        }
-    },
-    async mounted() {
-        const repo = new CooklangRepository();
-        await repo.initialize("patatowo", "recipes", "es");
-
-        console.log(repo.recipes)
-
-        this.recipes = repo.recipes.map((recipe, index) => ({
-            ...recipe,
-            name: repo.files[index].name.replace(".cook", "")
-        }))
-        console.log(this.recipes)
-    },
+    setup() {
+        const recipesStore = useRecipesStore()
+        return { recipesStore }
+    }
 }
 </script>
 
@@ -30,8 +13,7 @@ export default {
     <h1 class="title">Todas las recetas</h1>
     <main class="recipes">
         <section class="recipes__list">
-            <div v-for="recipe in recipes" class="recipes__list__item">
-
+            <div v-for="recipe in recipesStore.recipesList" class="recipes__list__item">
                 <img :src="recipe.metadata.image_url" alt="">
 
                 <h2>
@@ -39,7 +21,6 @@ export default {
                 </h2>
 
                 <p>
-
                     {{ recipe.metadata.description }}
                 </p>
             </div>

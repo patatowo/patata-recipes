@@ -5,15 +5,15 @@ export const useRecipesStore = defineStore({
 
   state: () => {
     return {
-      recipes: ["vulo"],
+      recipes: [],
     };
   },
 
   actions: {
-    recipesPush: (recipe) => {
+    recipesPush(recipe: any) {
       this.recipes.push(recipe);
     },
-    recipesSet: (recipes) => {
+    recipesSet(recipes: any) {
       this.recipes = recipes;
     },
   },
