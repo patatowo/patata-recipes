@@ -5,7 +5,7 @@ export const useRecipesStore = defineStore({
 
   state: () => {
     return {
-      recipes: [],
+      recipes: [] as any[],
     };
   },
 

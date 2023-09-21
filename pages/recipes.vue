@@ -60,7 +60,7 @@ export default {
 
             @media(hover: hover) {
                 &:hover {
-                    border-color: #a4c5d6;
+                    border-color: #80a1b5;
                 }
             }
 
