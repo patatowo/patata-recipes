@@ -30,10 +30,29 @@ export default {
 <template>
     <main v-if="recipe">
         <h1>{{ recipe.name }}</h1>
+        <img :src="recipe.metadata.image_url" alt="">
 
         <p v-for="paragraph in paragraphs">
             {{ paragraph }}
         </p>
     </main>
-    <div v-else>Loading...</div>
+    <main v-else>Loading...</main>
 </template>
+
+<style lang="scss">
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    font-family: var(--font-family-special);
+}
+
+img {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 500px;
+    width: 1000px;
+
+}
+</style>

@@ -5,6 +5,11 @@ export default {
     setup() {
         const recipesStore = useRecipesStore()
         return { recipesStore }
+    },
+    methods: {
+        goToRecipe(name) {
+            navigateTo(`/${name}`)
+        }
     }
 }
 </script>
@@ -13,7 +18,8 @@ export default {
     <h1 class="title">Todas las recetas</h1>
     <main class="recipes">
         <section class="recipes__list">
-            <div v-for="recipe in recipesStore.recipesList" class="recipes__list__item">
+            <div @click="goToRecipe(recipe.name)" v-for="recipe in recipesStore.recipesList" class="recipes__list__item">
+
                 <img :src="recipe.metadata.image_url" alt="">
 
                 <h2>
@@ -23,6 +29,9 @@ export default {
                 <p>
                     {{ recipe.metadata.description }}
                 </p>
+
+                <button type="button">ver más</button>
+
             </div>
         </section>
     </main>
@@ -45,6 +54,18 @@ export default {
         margin-right: 100px;
 
         &__item {
+            background-color: var(--secondary-color);
+
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+            transition: background-color 0.25s ease-out;
+
+            @media(hover: hover) {
+                &:hover {
+                    background-color: #bdd7e7;
+                }
+            }
+
             padding: 2em;
 
             @media (max-width: 575px) {
@@ -53,16 +74,16 @@ export default {
 
             align-content: start;
 
-            border: 4px solid var(--secondary-color);
+            border: 0.1px solid var(--secondary-color);
             border-radius: 18px;
 
-            transition: border-color 0.25s ease-out;
+            // transition: border-color 0.25s ease-out;
 
-            @media(hover: hover) {
-                &:hover {
-                    border-color: #80a1b5;
-                }
-            }
+            // @media(hover: hover) {
+            //     &:hover {
+            //         border-color: #80a1b5;
+            //     }
+            // }
 
             display: grid;
             grid-template: "image title"
@@ -70,9 +91,12 @@ export default {
             gap: 0.5em 2em;
 
             &>img {
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+
                 grid-area: image;
 
                 width: 200px;
+                height: 200px;
                 aspect-ratio: 1/1;
 
                 object-fit: cover;
