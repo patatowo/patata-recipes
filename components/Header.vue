@@ -16,7 +16,7 @@
 .header {
     ul {
         padding: 0;
-        padding-right: 1em;
+        padding-right: 2.2em;
         list-style: none;
 
         font-family: var(--font-family-special);
