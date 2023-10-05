@@ -15,8 +15,8 @@ export default {
 </script>
 
 <template>
-    <div class="div1">
-        <div class="div2">
+    <div class="pink_square">
+        <div class="square_text">
             <h1>
                 It's cooking time!
             </h1>
@@ -27,19 +27,30 @@ export default {
             </p>
         </div>
 
-        <img class="cocinera" src="~/public/images/cocinera.png" />
+        <img class="cooking_drawing" src="~/public/images/cocinera.png" />
     </div>
-    <div class="recetas_temporada">
-        <img class="foto_temporada" src="~/public/images/receta_otoñal.webp" />
-    </div>
-    <div>
-        <img class="foto_novedades" src="~/public/images/risotto.jpg" alt="">
+
+    <div class="recomendations">
+        <div class="season_recipes">
+            <img class="seaseon_image" src="~/public/images/receta_otoñal.webp" />
+            <h2>recetas de temporada</h2>
+        </div>
+
+        <div class="popular_recipes">
+            <img class="popular_image" src="~/public/images/tarta.jpg">
+            <h2>lo más popular</h2>
+        </div>
+
+        <div class="new_recipes">
+            <img class="new_image" src="~/public/images/risotto.jpg" alt="">
+            <h2>novedades</h2>
+        </div>
 
     </div>
 </template>
 
 <style>
-.div1 {
+.pink_square {
     border: 0.1px solid var(--secondary-color);
     border-radius: 18px;
 
@@ -52,7 +63,7 @@ export default {
     text-align: right;
 }
 
-.div2 {
+.square_text {
     text-align: left;
 
     float: left;
@@ -61,7 +72,7 @@ export default {
     margin-top: 5em;
 }
 
-.cocinera {
+.cooking_drawing {
     width: 40em;
     text-align: right;
 }
@@ -79,25 +90,54 @@ p {
     margin: 0;
 }
 
-.recetas_temporada {
-    border: 0.1px solid black;
-    border-radius: 18px;
-    margin-left: 2em;
-    margin-right: 2em;
-    margin-bottom: 2em;
-    margin-right: 57em;
-    padding-bottom: 3em;
-}
-
-.foto_temporada {
-    width: 25em;
-    height: 15em;
+h2 {
+    font-family: var(--font-family-special);
     text-align: center;
 }
 
-.foto_novedades {
+.recomendations {
+    text-align: center;
+}
+
+
+.season_recipes {
+    border-radius: 18px;
+    margin-left: 2em;
+    margin-bottom: 2em;
+    float: left;
+}
+
+.seaseon_image {
     width: 25em;
     height: 15em;
-    text-align: left;
+    border-radius: 18px;
+
+}
+
+
+.popular_recipes {
+    border-radius: 18px;
+    margin-right: 2em;
+    margin-bottom: 2em;
+    float: right;
+}
+
+.popular_image {
+    width: 25em;
+    height: 15em;
+    border-radius: 18px;
+}
+
+
+.new_recipes {
+    border-radius: 18px;
+    margin-bottom: 2em;
+}
+
+.new_image {
+    width: 25em;
+    height: 15em;
+    border-radius: 18px;
+
 }
 </style>
