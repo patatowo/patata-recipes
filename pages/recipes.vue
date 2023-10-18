@@ -15,26 +15,18 @@ export default {
 </script>
 
 <template>
-    <h1 class="title">Todas las recetas</h1>
-    <main class="recipes">
-        <section class="recipes__list">
-            <div @click="goToRecipe(recipe.name)" v-for="recipe in recipesStore.recipesList" class="recipes__list__item">
+    <h1 class="title"><span>---</span> Todas las recetas <span>---</span></h1>
+    <ul class="recipes_list">
+        <li @click="goToRecipe(recipe.name)" v-for="recipe in recipesStore.recipesList" class="item">
 
-                <img :src="recipe.metadata.image_url" alt="">
+            <img :src="recipe.metadata.image_url">
 
-                <h2>
-                    <NuxtLink :to="'/' + recipe.name">{{ recipe.name }}</NuxtLink>
-                </h2>
+            <h2>
+                {{ recipe.name }}
+            </h2>
 
-                <p>
-                    {{ recipe.metadata.description }}
-                </p>
-
-                <button type="button">ver más</button>
-
-            </div>
-        </section>
-    </main>
+        </li>
+    </ul>
 </template>
 
 <style lang="scss">
@@ -45,86 +37,31 @@ export default {
 
 }
 
-.recipes {
-    &__list {
-        display: flex;
-        flex-direction: column;
-        gap: 2em;
-        margin-left: 100px;
-        margin-right: 100px;
 
-        &__item {
-            background-color: var(--secondary-color);
+.recipes_list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1280px;
+    margin: 0 auto;
+    justify-content: space-around;
+}
 
-            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+.item {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-top: 2.7em;
+    padding-bottom: 3em;
+    flex: 0 0 280px;
+    height: 280px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 15px;
+}
 
-            transition: background-color 0.25s ease-out;
-
-            @media(hover: hover) {
-                &:hover {
-                    background-color: #bdd7e7;
-                }
-            }
-
-            padding: 2em;
-
-            @media (max-width: 575px) {
-                padding: 1em 0.5em;
-            }
-
-            align-content: start;
-
-            border: 0.1px solid var(--secondary-color);
-            border-radius: 18px;
-
-            // transition: border-color 0.25s ease-out;
-
-            // @media(hover: hover) {
-            //     &:hover {
-            //         border-color: #80a1b5;
-            //     }
-            // }
-
-            display: grid;
-            grid-template: "image title"
-            "image description";
-            gap: 0.5em 2em;
-
-            &>img {
-                box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
-
-                grid-area: image;
-
-                width: 200px;
-                height: 200px;
-                aspect-ratio: 1/1;
-
-                object-fit: cover;
-
-            }
-
-            &>h2 {
-                grid-area: title;
-                align-items: center;
-
-                font-family: var(--font-family-special);
-
-                margin: 0;
-
-            }
-
-            &>p {
-                grid-area: description;
-
-                margin: 0;
-            }
-
-            &:nth-child(even) {
-                grid-template: "title image"
-                    "description image";
-            }
-
-        }
-    }
+span {
+    color: var(--secondary-color);
 }
 </style>
