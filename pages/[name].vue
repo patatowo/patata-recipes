@@ -80,6 +80,7 @@ img {
     width: 83em;
     height: 15em;
     object-fit: cover;
+    border-radius: 15px;
 
 }
 

@@ -54,6 +54,8 @@ export default {
     border: 0.1px solid var(--secondary-color);
     border-radius: 18px;
 
+    height: 25em;
+
     margin-left: 2em;
     margin-right: 2em;
     margin-bottom: 2em;
@@ -61,6 +63,8 @@ export default {
     background-color: var(--secondary-color);
 
     text-align: right;
+
+    overflow: hidden;
 }
 
 .square_text {
@@ -74,6 +78,7 @@ export default {
 
 .cooking_drawing {
     width: 40em;
+    height: 25em;
     text-align: right;
 }
 

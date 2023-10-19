@@ -59,6 +59,16 @@ export default {
     flex-direction: column;
     overflow: hidden;
     border-radius: 15px;
+    transition: all 0.4s ease-in-out;
+}
+
+.item:hover {
+    filter: brightness(80%);
+}
+
+img {
+    height: 290px;
+    object-fit: cover;
 }
 
 span {
