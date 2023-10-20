@@ -50,8 +50,8 @@ export default {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     margin-top: 2.7em;
     padding-bottom: 3em;
-    flex: 0 0 280px;
-    height: 280px;
+    flex: 0 0 15em;
+    height: 13em;
     background: #fff;
     display: flex;
     align-items: center;
