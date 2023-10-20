@@ -1,5 +1,8 @@
 <template>
     <header class="header">
+        <div class="perfil">
+            <img src="~/public/images/perfil_icon_black.png" alt="">
+        </div>
         <ul>
             <li>
                 <NuxtLink to="/">Home</NuxtLink>
@@ -14,8 +17,25 @@
 
 <style lang="scss">
 .header {
+    margin-bottom: 2em;
+    padding-bottom: 0.1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px -3px, rgba(0, 0, 0, 0.05) 0px 2px 2px -2px;
+
+    .perfil {
+        text-align: left;
+        float: left;
+        margin-left: 2em;
+
+        img {
+            width: 2.5em;
+            height: 2.5em;
+            object-fit: contain;
+            text-align: left;
+        }
+    }
+
     ul {
-        padding: 0;
+        padding-top: 0.5em;
         padding-right: 2.2em;
         list-style: none;
 
@@ -24,6 +44,8 @@
         display: flex;
         justify-content: flex-end;
         gap: 1em;
+
+
 
         li {
             a {

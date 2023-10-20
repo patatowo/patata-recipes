@@ -21,6 +21,13 @@ export default {
                     )
                 }
             )
+        },
+        ingredients() {
+            return this.recipe?.ingredients.map(
+                (ingredient) => {
+                    return ingredient
+                }
+            )
         }
     }
 }
@@ -40,20 +47,20 @@ export default {
             <div class="ingredients">
                 <h2>Ingredientes</h2>
                 <ul>
-                    <li>1 ud de cebolla</li>
-                    <li>200 g de mantequilla</li>
-                    <li>2 dientes de ajo</li>
-                    <li>300 g de setas</li>
-                    <li>200 g de parmesano</li>
-                    <li>2 ramas de tomillo</li>
-                    <li>Pimienta</li>
-                    <li>Sal</li>
+                    <li v-for="ingredient in ingredients">
+                        {{ ingredient.quantity }}
+                        {{ ingredient.units }}
+                        de
+                        {{ ingredient.name }}
+
+                    </li>
+
                 </ul>
             </div>
 
 
             <div class="steps">
-                <p v-for="paragraph in paragraphs">
+                <p v-for="paragraph in paragraphs" class="paragraph">
                     {{ paragraph }}
                 </p>
             </div>
@@ -100,7 +107,7 @@ img {
 
     text-align: left;
     float: left;
-    min-width: 12em;
+    min-width: 14em;
 }
 
 .steps {
@@ -109,9 +116,9 @@ img {
 
 }
 
-p {
+.paragraph {
     color: var(--font-color);
-    margin-bottom: 0.5em;
+    margin: 0.5em;
     text-align: justify;
 }
 </style>
