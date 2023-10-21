@@ -127,7 +127,7 @@ h2 {
     transition: all 0.3s ease-in-out;
 }
 
-.item:hover {
+.recomendation:hover {
     filter: brightness(75%);
 }
 
