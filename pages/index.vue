@@ -22,19 +22,40 @@ export default {
     </div>
 
     <ul class="recomendations">
-      <li class="recomendation">
-        <img src="~/public/images/receta_otoñal.webp" />
-        <h2>recetas de temporada</h2>
+      <li
+        class="recomendation"
+        style="--background-image: url('/images/receta_otoñal.webp')"
+      >
+        <div class="recomendation__texts">
+          <h2 class="recomendation__title">Recetas de temporada</h2>
+          <p class="recomendation__description">
+            Aprovecha los productos de temporada para hacer las mejores recetas
+          </p>
+        </div>
       </li>
 
-      <li class="recomendation">
-        <img src="~/public/images/tarta.jpg" />
-        <h2>lo más popular</h2>
+      <li
+        class="recomendation"
+        style="--background-image: url('/images/tarta.jpg')"
+      >
+        <div class="recomendation__texts">
+          <h2 class="recomendation__title">Lo más popular</h2>
+          <p class="recomendation__description">
+            Descubre las recetas más populares
+          </p>
+        </div>
       </li>
 
-      <li class="recomendation">
-        <img src="~/public/images/risotto.jpg" alt="" />
-        <h2>novedades</h2>
+      <li
+        class="recomendation"
+        style="--background-image: url('/images/risotto.jpg')"
+      >
+        <div class="recomendation__texts">
+          <h2 class="recomendation__title">Novedades</h2>
+          <p class="recomendation__description">
+            Descubre las últimas recetas añadidas
+          </p>
+        </div>
       </li>
     </ul>
   </main>
@@ -111,42 +132,90 @@ export default {
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-auto-rows: 1fr;
-    gap: 2em;
+    grid-template-rows: 1fr;
+    gap: 0.5em;
 
-    @media (max-width: 400px) {
-      gap: 0.5em;
-    }
+    // @media (max-width: 400px) {
+    //   gap: 0.5em;
+    // }
   }
 
   .recomendation {
-    font-size: clamp(0.75em, 2vw, 1em);
-
-    // box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    // rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-
-    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
     display: flex;
-    align-items: center;
-    // justify-content: center;
     flex-direction: column;
+    justify-content: flex-end;
 
     overflow: hidden;
-    border-radius: 15px;
+    border-radius: 0.5em;
+
+    font-size: clamp(1em, 1.5vw, 1em);
+
+    padding: 1em;
+    padding-top: 10em;
+
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    &:before {
+      position: absolute;
+      content: "";
+      display: block;
+      inset: 0;
+
+      background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.9) 100%
+      );
+    }
 
     transition: filter 0.3s ease-in-out;
-
+    transition: all 0.3s ease-in-out;
+    background-size: auto 100%;
     &:hover {
-      filter: brightness(75%);
+      filter: brightness(80%);
+
+      background-position: center;
+      background-size: auto 105%;
     }
 
-    img {
-      object-fit: cover;
-      width: 100%;
-      // height: auto;
-      aspect-ratio: 2/1;
+    &__texts {
+      flex: 1;
+      z-index: 1;
     }
+
+    &__title,
+    &__description {
+      margin: 0;
+      color: white;
+      text-align: left;
+    }
+
+    &__title {
+      font-weight: bold;
+      font-size: 1.5em;
+
+      margin-bottom: 0.25em;
+    }
+
+    &__description {
+      font-size: 0.75em;
+
+      opacity: 0.8;
+    }
+
+    // img {
+    //   object-fit: cover;
+    //   width: 100%;
+    //   // height: auto;
+    //   aspect-ratio: 2/1;
+    // }
   }
 }
 </style>
