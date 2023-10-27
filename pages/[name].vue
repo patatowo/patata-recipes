@@ -37,7 +37,7 @@ export default {
 <template>
     <main v-if="recipe">
         <div class="image_div">
-            <img :src="recipe.metadata.image_url">
+            <img class="recipe-image" :src="recipe.metadata.image_url">
         </div>
 
         <h1>{{ recipe.name }}</h1>
@@ -82,7 +82,7 @@ h1 {
     text-align: center;
 }
 
-img {
+.recipe-image {
     margin: 0em;
     width: 83em;
     height: 15em;
