@@ -74,6 +74,7 @@ export default {
         height: 40vh;
 
         margin: auto;
+        margin-top: 1.5em;
         padding: 0 3em;
 
         display: flex;
