@@ -15,20 +15,18 @@ export default {
 </script>
 
 <template>
-  <h1 class="title"><span>---</span> Todas las recetas <span>---</span></h1>
-  <ul class="recipes_list">
-    <li
-      @click="goToRecipe(recipe.name)"
-      v-for="recipe in recipesStore.recipesList"
-      class="item"
-    >
-      <img :src="recipe.metadata.image_url" />
+  <main>
+    <h1 class="title"><span>---</span> Todas las recetas <span>---</span></h1>
+    <ul class="recipes_list">
+      <li @click="goToRecipe(recipe.name)" v-for="recipe in recipesStore.recipesList" class="item">
+        <img :src="recipe.metadata.image_url" />
 
-      <h2>
-        {{ recipe.name }}
-      </h2>
-    </li>
-  </ul>
+        <h2>
+          {{ recipe.name }}
+        </h2>
+      </li>
+    </ul>
+  </main>
 </template>
 
 <style lang="scss">
@@ -60,9 +58,11 @@ export default {
   overflow: hidden;
   border-radius: 15px;
   transition: all 0.4s ease-in-out;
+
   &:hover {
     filter: brightness(80%);
   }
+
   img {
     height: 290px;
     object-fit: cover;

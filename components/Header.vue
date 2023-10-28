@@ -1,8 +1,15 @@
 <template>
     <header class="header">
-        <div class="perfil">
-            <img src="~/public/images/perfil_icon_black.png" alt="">
+        <div class="header__actions">
+            <div class="profile">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                    viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                        d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+                </svg>
+            </div>
         </div>
+
         <ul>
             <li>
                 <NuxtLink to="/">Home</NuxtLink>
@@ -17,26 +24,37 @@
 
 <style lang="scss">
 .header {
-    margin-bottom: 2em;
+    display: flex;
+    justify-content: space-between;
+
     padding-bottom: 0.1em;
+    padding-left: 2.2em;
+    padding-right: 2.2em;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px -3px, rgba(0, 0, 0, 0.05) 0px 2px 2px -2px;
 
-    .perfil {
-        text-align: left;
-        float: left;
-        margin-left: 2em;
+    &__actions {
+        display: flex;
+        align-items: center;
+    }
 
-        img {
-            width: 2.5em;
-            height: 2.5em;
-            object-fit: contain;
-            text-align: left;
+    .profile {
+        background-color: var(--secondary-color);
+        border-radius: 50%;
+        aspect-ratio: 1/1;
+        width: auto;
+        height: auto;
+        padding: 0.5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            fill: #d5aaa0;
+
         }
     }
 
     ul {
-        padding-top: 0.5em;
-        padding-right: 2.2em;
         list-style: none;
 
         font-family: var(--font-family-special);
