@@ -49,7 +49,7 @@
         align-items: center;
 
         svg {
-            fill: #d5aaa0;
+            fill: var(--special-color);
 
         }
     }
