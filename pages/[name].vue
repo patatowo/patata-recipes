@@ -97,6 +97,12 @@ export default {
 		padding-left: 2em;
 		padding-right: 2em;
 
+		@media (max-width: 1100px) {
+			padding-left: 0;
+			padding-right: 0;
+
+		}
+
 		h1 {
 			font-size: 3rem;
 			font-family: var(--font-family-special);
@@ -120,8 +126,6 @@ export default {
 
 				padding-right: 2em;
 				padding-bottom: 0.5em;
-				margin-left: 3em;
-
 				text-align: left;
 
 				min-width: 14em;
@@ -135,10 +139,10 @@ export default {
 			}
 
 			.steps {
+				width: 100%;
 
 				.paragraph {
 					color: var(--font-color);
-					margin: 0.5em;
 					text-align: justify;
 				}
 			}
